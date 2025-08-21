@@ -1,0 +1,92 @@
+@import 'tailwindcss';
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+:root {
+  --background-color: white;
+  --background-modal: rgba(0, 0, 0, 0.4);
+  --hover-color: rgba(0, 0, 0, 0.03);
+  --hover-color-secondary: rgba(0, 0, 0, 0.1);
+  --border-color: #eff3f4;
+  --primary-color: #0f1419;
+  --secondary-color: #536471;
+  --blue-components-color: #1d9bf0;
+  --buttons-text-color: #e7e9ea;
+  --comment-hover-color: #1d73f0;
+  --retweet-hover-color: #00ba7c;
+  --like-hover-color: #f91880;
+  --box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px,
+    rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+  --rounded-size: 16px;
+  --float-button: rgba(15, 20, 25, 0.75);
+  --float-button-hover: rgba(39, 44, 48, 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: black;
+    --background-modal: rgba(91, 112, 131, 0.4);
+    --hover-color: rgba(255, 255, 255, 0.03);
+    --hover-color-secondary: rgba(255, 255, 255, 0.1);
+    --border-color: #2f3336;
+    --primary-color: #e7e9ea;
+    --secondary-color: #717676;
+    --buttons-text-color: #0f1419;
+    --box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+      rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background-color);
+  --color-modalBackground: var(--background-modal);
+  --color-hoverColor: var(--hover-color);
+  --color-hoverColorSecondary: var(--hover-color-secondary);
+  --color-borderColor: var(--border-color);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-buttonText: var(--buttons-text-color);
+  --color-twitterBlue: var(--blue-components-color);
+  --color-commentHover: var(--comment-hover-color);
+  --color-retweetHover: var(--retweet-hover-color);
+  --color-likeHover: var(--like-hover-color);
+  --shadow-twitterShadow: var(--box-shadow);
+  --radius-twitterRounded: var(--rounded-size);
+  --color-floatButton: var(--float-button);
+  --color-floatButtonHover: var(--float-button-hover);
+  --breakpoint-movile: 600px;
+}
+
+@layer components {
+  .break-word-legacy {
+    word-break: break-word;
+  }
+
+  .bg-blur {
+    @apply bg-white/85 dark:bg-black/65 backdrop-blur-md;
+  }
+
+  .scroll-gutter-stable {
+    scrollbar-gutter: stable;
+  }
+
+  /* HTML: <div class="loader"></div> */
+  .loader {
+    height: 4px;
+    width: 100%;
+    --c: no-repeat linear-gradient(var(--blue-components-color) 0 0);
+    background: var(--c), var(--c), #1d9bf020;
+    background-size: 60% 100%;
+    animation: l16 3s infinite;
+  }
+  @keyframes l16 {
+    0% {
+      background-position: -150% 0, -150% 0;
+    }
+    66% {
+      background-position: 250% 0, -150% 0;
+    }
+    100% {
+      background-position: 250% 0, 250% 0;
+    }
+  }
+}

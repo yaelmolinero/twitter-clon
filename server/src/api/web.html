@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prueba de cookies</title>
+  </head>
+  <body>
+    <h1>Web para probar las cookies del backend xd</h1>
+    <form id="form">
+      <div>
+        <label>
+          Texto del tweet:
+          <input
+            type="text"
+            name="content"
+            id="content"
+            autocomplete="off"
+            required
+          />
+        </label>
+      </div>
+      <div>
+        <label>
+          Imagen:
+          <input type="file" name="image" id="image" />
+        </label>
+      </div>
+
+      <button type="submit">Publicar</button>
+    </form>
+
+    <script>
+      const form = document.getElementById("form");
+      const token =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTI4ODc4MzUsImV4cCI6MTc1Mjg5MTQzNX0.osNieXDZD6KkDnYlCPQl5U1UnyK4UULuYb-doJXjxxU";
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        formData.append("parentTweetID", null);
+
+        fetch("http://localhost:3000/tweetss", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          body: formData,
+        })
+          .then((res) => {
+            console.log(res.headers);
+            return res.json();
+          })
+          .then((data) => console.log(data))
+          .catch((err) => console.log(err));
+      });
+    </script>
+  </body>
+</html>

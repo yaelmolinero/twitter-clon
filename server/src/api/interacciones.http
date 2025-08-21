@@ -1,0 +1,51 @@
+### Dar like a un tweet
+POST http://localhost:3000/likes/315246503151010828
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+### Dar like a un tweet
+DELETE http://localhost:3000/likes/315246503151010828
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+########## RETWEETS ##########
+
+### Compartir un tweet
+POST http://localhost:3000/retweets/305797379116762115
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+### Dejar de compartir un tweet
+DELETE http://localhost:3000/retweets/305797379116762115
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+########## FOLLOWS ##########
+
+### Empezar a seguir a un usuario
+POST http://localhost:3000/follows/305797379116762115
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+### Dejar de seguir a un usuario
+DELETE http://localhost:3000/follows/305797379116762115
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MTk5MDg2NCwiZXhwIjoxNzQxOTk0NDY0fQ.uB0HDkfbw-BgRgKmVdOQKGfnVpd6wRvRLhOXAdV3LiY
+
+########## NOTIFICACIONES ##########
+
+### Obtiene las notificaciones de un usuario
+GET http://localhost:3000/notifications/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS90d2l0dGVyLWltYWdlcy9pbWFnZS91cGxvYWQvdjE3NTQ2MjE2OTkvYXZhdGFycy96Yjl1enFyaTMydGM1Yjl6eXJjei53ZWJwIiwiYmlvIjoiRGV2IEZ1bGwgU3RhY2sgZW4gcHJvY2Vzb1xyXG5cclxuRGVzYXJyb2xsYW5kbyB1biBjbG9uIGRlIHR3aXR0ZXIiLCJpYXQiOjE3NTUxMzAwNTAsImV4cCI6MTc1NTEzMzY1MH0.5g00Ksqjfe2l4m74_WmxZtZOoD1qMzv1sZCqPxxLOOc
+
+### Crea una notificacion que le llegara a otro usuario
+POST http://localhost:3000/notifications/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImlhdCI6MTc0MjM0MDU5MiwiZXhwIjoxNzQyMzQ0MTkyfQ.GEKxxLrMYSsm0nwl0jrjw86MkbjZDeNrn8o23080cU8
+Content-Type: application/json
+
+{
+  "recipientID": "305723767227679746",
+  "type": "follow",
+  "tweetID": null
+}
+
+### Marca una notificacion como vista
+POST http://localhost:3000/notifications/check/11
+
+########## QUERY ##########
+GET http://localhost:3000/search?page=1&query=mancha&filter=user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOiJodHRwczovL3Jlcy5jbG91ZGluYXJ5LmNvbS90d2l0dGVyLWltYWdlcy9pbWFnZS91cGxvYWQvdjE3NTQ2MjE2OTkvYXZhdGFycy96Yjl1enFyaTMydGM1Yjl6eXJjei53ZWJwIiwiYmlvIjoiRGV2IEZ1bGwgU3RhY2sgZW4gcHJvY2Vzb1xyXG5cclxuRGVzYXJyb2xsYW5kbyB1biBjbG9uIGRlIHR3aXR0ZXIiLCJpYXQiOjE3NTQ5NjExNzUsImV4cCI6MTc1NDk2NDc3NX0.uadRNluRtpnHRVE8kKIkuPTPjkFWO080ClioCXtMAdo

@@ -1,0 +1,25 @@
+### Obtiene los utimos 10 tweets publicados (Token Opcional)
+GET http://localhost:3000/tweets?page=1
+
+### Obtiene el hilo de un tweet por su id (Token Opcional)
+GET http://localhost:3000/tweets/413851587648160834
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBlbiBwcm9jZXNvIiwiaWF0IjoxNzUxNTY2NTc3LCJleHAiOjE3NTE1NzAxNzd9.ITWqrciLnPp9yUNu8-LmUqGpHXRKTCo2xbpL7kRtvGg
+
+### Obtiene los comentarios de un tweet
+GET http://localhost:3000/tweets/413127144860812350/comments?page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTM0OTQ3NzUsImV4cCI6MTc1MzQ5ODM3NX0.bFMXzU7XDx8l4mF_w8b8Xl7V1-UxmwQ_pNKxEhmHipk
+
+### Eliminar un tweet por id y con access token
+DELETE http://localhost:3000/tweets/398471278010303504
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBlbiBwcm9jZXNvIiwiaWF0IjoxNzUxNTY2NTc3LCJleHAiOjE3NTE1NzAxNzd9.ITWqrciLnPp9yUNu8-LmUqGpHXRKTCo2xbpL7kRtvGg
+
+### Publica un tweet o un hilo (el hilo se publica en un for, obtieniendo el id del tweet creado y pasarlo al body)
+# Para crear tweets con imagenes se deben mandar con formulario de js
+POST http://localhost:3000/tweets/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTMxNDYwOTEsImV4cCI6MTc1MzE0OTY5MX0.ruS6DODGHDe9uBXL9ZyUudSj2qWgfROVmIH3fmwMOko
+Content-Type: application/json
+
+{
+  "content": "Eliminame",
+  "parentTweetID": "411719814831146030"
+}

@@ -1,0 +1,38 @@
+### Obtiene la informacion de un usuario (Token Opcional)
+GET http://localhost:3000/users/yaelmolinero
+
+
+### Actualizar la informacion de un usuario (name, avatar, cover, bio, location, website)
+PUT http://localhost:3000/users/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBlbiBwcm9jZXNvIiwiaWF0IjoxNzUxNTY2NTc3LCJleHAiOjE3NTE1NzAxNzd9.ITWqrciLnPp9yUNu8-LmUqGpHXRKTCo2xbpL7kRtvGg
+
+{
+  "location": "Monterrey, MX"
+}
+
+### Tweets escritos por un usuario (Token Opcional)
+GET http://localhost:3000/users/yaelmolinero/tweets?page=1&multimedia=true
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBlbiBwcm9jZXNvIiwiaWF0IjoxNzUxNTY2NTc3LCJleHAiOjE3NTE1NzAxNzd9.ITWqrciLnPp9yUNu8-LmUqGpHXRKTCo2xbpL7kRtvGg
+
+### Hilos de las respuestas escritas por un usuario (Token Opcional)
+GET http://localhost:3000/users/yaelmolinero/replies?page=1
+
+### Likes de un usuario
+GET http://localhost:3000/users/me/likes?page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTMyMjU0OTcsImV4cCI6MTc1MzIyOTA5N30.n1cYYBTV-JjKtsYhByEda6VEG-VZ_JP9BJKeQGfZ58Y
+
+### Tweets guardados de un usuario
+GET http://localhost:3000/users/me/bookmarks?page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwNTcyMzc2NzIyNzY3OTc0NiIsIm5hbWUiOiJLZXZpbiIsInVzZXJuYW1lIjoia2V2aW5hY2hvMDciLCJhdmF0YXIiOm51bGwsImJpbyI6bnVsbCwiaWF0IjoxNzUyNjMwNzI1LCJleHAiOjE3NTI2MzQzMjV9.W_xmQsb0cLk0o6KzN3W52uv5qbF6ARV1PpviP1Uo9IE
+
+### Seguidores de un usuario (Token Opcional)
+GET http://localhost:3000/users/yaelmolinero/followers
+
+### Cuentas que sigue un usuario (Token Opcional)
+GET http://localhost:3000/users/yaelmolinero/following
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTQ0NDMwNzQsImV4cCI6MTc1NDQ0NjY3NH0.ue0s68USpiIluAshBwa4d95wmhsL7de1r3pgvKNRVRE
+
+### Cuentas sugeridas para seguir
+GET http://localhost:3000/users/suggestions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwMjg1NDI3NjAzODc4ODA5NyIsIm5hbWUiOiJZYWVsIiwidXNlcm5hbWUiOiJ5YWVsbW9saW5lcm8iLCJhdmF0YXIiOm51bGwsImJpbyI6IkRldiBGdWxsIFN0YWNrIGVuIHByb2Nlc28iLCJpYXQiOjE3NTMyMjU0OTcsImV4cCI6MTc1MzIyOTA5N30.n1cYYBTV-JjKtsYhByEda6VEG-VZ_JP9BJKeQGfZ58Y
