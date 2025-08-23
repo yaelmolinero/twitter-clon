@@ -3,7 +3,8 @@
   "compilerOptions": {
     "module": "Node16",
     "rootDir": "./src",
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "skipLibCheck": true
   },
   "include": [
     "src/**/*"
