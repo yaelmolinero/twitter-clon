@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'server/**'
 
 jobs:
   build-and-deploy:
@@ -22,3 +24,10 @@ jobs:
 
       - run: npm ci --no-fund
       - run: npm run build
+
+      - name: Deploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          deploy_url: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          curl "$deploy_url"
