@@ -18,6 +18,7 @@ import errorHandler from './middlewares/errorHandler';
 import cors from './middlewares/cors';
 
 const PORT = process.env.PORT ?? 3000;
+const SERVER_URL = process.env.RENDER_EXTERNAL_URL ?? `http://localhost:${PORT}`;
 const app = express();
 
 app.use(express.json());
@@ -39,5 +40,5 @@ app.use('/search', createQueryRouter({ queryModel: Models.QueryModel }));
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-  console.log(pc.blue(`Server running on ${pc.reset(`http://localhost:${PORT}`)}`));
+  console.log(pc.blue(`Server running on ${pc.reset(SERVER_URL)}`));
 });
