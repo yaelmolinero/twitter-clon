@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Navigate, useLocation, useParams } from 'react-router';
 import { useUser } from '@/hooks/useAuth.ts';
 import { paths } from '@/config/paths.ts';
+import LoadingApp from '@/components/ui/LoadingApp.tsx';
 
 import { ROLES } from '@/types/users.d';
 
@@ -22,8 +23,8 @@ export function ProtectedRoute({ children }: { children: React.ReactNode }) {
     refetchToken();
 
   }, [isStale, refetchToken]);
-  if (isLoading) return null;
 
+  if (isLoading) return <LoadingApp />;
   if (
     !session
     || (isStale && isError)
