@@ -25,6 +25,7 @@ function CreateTweet({ type, parentTweetID, isReplyingModal = false, authorID }:
         content={content}
         file={file}
         image={image}
+        isDisabled={isPending}
         handleChange={(params) => handleChange(params)}
       />
     </form>

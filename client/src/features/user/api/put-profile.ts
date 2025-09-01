@@ -33,7 +33,7 @@ export function useEditProfile() {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
   const [croppedAreaPixels, setCroppedAreaPixels] = useState<Area | null>(null);
 
-  const { mutate } = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationFn: putProfile,
     onSuccess: () => {
       queryClient.invalidateQueries({ type: 'all' });
@@ -151,6 +151,7 @@ export function useEditProfile() {
     profile,
     imageSrc,
     render,
+    isPending,
     setRender,
     setCroppedAreaPixels,
     handleChange,

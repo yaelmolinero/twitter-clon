@@ -11,6 +11,7 @@ function EditProfile() {
     profile,
     imageSrc,
     render,
+    isPending,
     setRender,
     handleChange,
     handleFileChange,
@@ -26,6 +27,7 @@ function EditProfile() {
     <>
       <div className='w-full h-dvh flex justify-center items-center'>
         <div className='max-w-[600px] w-full h-[650px] bg-background rounded-2xl overflow-y-auto' onClick={(e) => e.stopPropagation()}>
+          {isPending && <div className='loader z-20 sticky top-0' />}
 
           {render === 'general' && (
             <>
@@ -34,6 +36,7 @@ function EditProfile() {
                 render={render}
                 handleClose={handleCloseClick}
                 handleSubmit={submitFn}
+                isDisabled={isPending}
               />
 
               <EditProfileForm

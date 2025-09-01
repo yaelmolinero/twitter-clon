@@ -43,7 +43,7 @@ function ComposeTweet() {
                 removeTweetOnThread={() => removeTweet(id, index)}
                 focusOnThread={() => handleFocus(id)}
                 isFocused={isFocused}
-                isDisabled={disableForm}
+                isDisabled={disableForm || isPending}
                 isMoreThanOne={thread.length > 1}
               />
             ))}

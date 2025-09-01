@@ -3,10 +3,10 @@ import { CloseIcon, LeftRowIcon } from '@/assets/icons';
 import type { EditProfileRenders } from '@/types/users.d.ts';
 
 type Props =
-  | { controlled: true; render: EditProfileRenders; handleSubmit: () => Promise<void>; handleClose: () => Promise<void> }
-  | { controlled?: false; render?: EditProfileRenders; handleSubmit?: () => Promise<void>; handleClose: () => Promise<void> };
+  | { controlled: true; render: EditProfileRenders; handleSubmit: () => Promise<void>; handleClose: () => Promise<void>, isDisabled?: boolean }
+  | { controlled?: false; render?: EditProfileRenders; handleSubmit?: () => Promise<void>; handleClose: () => Promise<void>, isDisabled?: boolean };
 
-function ModalHeader({ render, controlled, handleClose, handleSubmit }: Props) {
+function ModalHeader({ render, controlled, handleClose, handleSubmit, isDisabled = false }: Props) {
   const isGeneralRender = render === 'general';
 
   return (
@@ -27,8 +27,9 @@ function ModalHeader({ render, controlled, handleClose, handleSubmit }: Props) {
 
           <button
             type='button'
-            className='px-4 py-1 mr-2 rounded-full cursor-pointer font-semibold text-buttonText bg-primary hover:opacity-90 transition-opacity duration-200'
+            className='px-4 py-1 mr-2 rounded-full cursor-pointer font-semibold text-buttonText bg-primary hover:opacity-90 transition-opacity duration-200 disabled:opacity-50 disabled:cursor-default'
             onClick={handleSubmit}
+            disabled={isDisabled}
           >
             {isGeneralRender ? 'Guardar' : 'Aplicar'}
           </button>
