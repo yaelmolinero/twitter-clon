@@ -49,7 +49,7 @@ function Profile() {
       <Navbar type='navigation' label={name} />
 
       <div>
-        <div className={`w-full h-[200px] ${!data?.cover && 'bg-borderColor'}`}>
+        <div className={`w-full aspect-[3/1] movile:aspe movile:h-[200px] ${!data?.cover && 'bg-borderColor'}`}>
           {(data && data.cover) && (
             <Link to={paths.app.profile.cover.getHref(data.username)} state={{ backgroundLocation: location, user: data }}>
               <div className='w-full h-full'>

@@ -120,7 +120,7 @@ function Navigation() {
         </div>
       </div>
 
-      {isMovil && <ComposeButton className='fixed right-5 bottom-0 z-0' small />}
+      {(isUserAuthenticated && isMovil) && <ComposeButton className='fixed right-5 bottom-0 z-0' small />}
     </header>
   );
 }
